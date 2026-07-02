@@ -8,7 +8,7 @@ function CardForm({ onCardDetailsReady, disabled }) {
     cvv: ''
   });
 
-  const [cardErrors, setCardErrors] = useState({});
+  const [cardErrors] = useState({});
 
   const handleCardChange = (e) => {
     const { name, value } = e.target;

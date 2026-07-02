@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SecurityBanner from './components/SecurityBanner';
 import DonationForm from './components/DonationForm';
 import SuccessScreen from './components/SuccessScreen';
-import './styles/App.css';
+import './App.css';
 
 function App() {
   const [donationData, setDonationData] = useState(null);
