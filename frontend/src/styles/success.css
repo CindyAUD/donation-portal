@@ -1,0 +1,162 @@
+.success-container {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-md);
+  animation: slideIn 0.3s ease;
+}
+
+.success-content {
+  text-align: center;
+}
+
+.success-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.success-header h1 {
+  font-size: 2.25rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--success-color);
+}
+
+.success-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Receipt Section */
+.receipt-section {
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-2xl) 0;
+  text-align: left;
+}
+
+.receipt-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.receipt-item:last-child {
+  border-bottom: none;
+}
+
+.receipt-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.receipt-value {
+  color: var(--text-secondary);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.95rem;
+}
+
+.transaction-id {
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Confirmation Message */
+.confirmation-message {
+  background-color: #ecfdf5;
+  border-left: 4px solid var(--success-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.confirmation-message p {
+  color: #065f46;
+  font-size: 0.95rem;
+}
+
+/* Impact Message */
+.impact-message {
+  background-color: #f0f9ff;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.impact-message h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.impact-message p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Success Actions */
+.success-actions {
+  margin-top: var(--spacing-2xl);
+  display: flex;
+  gap: var(--spacing-md);
+  flex-direction: column;
+}
+
+.success-actions button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.success-actions .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  margin: 0;
+}
+
+.success-actions .btn-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .success-container {
+    padding: var(--spacing-lg);
+  }
+
+  .success-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .receipt-section {
+    padding: var(--spacing-md);
+  }
+
+  .receipt-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .receipt-value {
+    font-size: 0.85rem;
+  }
+}

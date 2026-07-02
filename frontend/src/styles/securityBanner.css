@@ -1,0 +1,55 @@
+.security-banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  color: var(--bg-white);
+  padding: var(--spacing-md) var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  animation: slideIn 0.5s ease;
+}
+
+.security-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.security-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.security-banner-content p {
+  margin: 0;
+}
+
+.security-banner-content strong {
+  font-weight: 700;
+}
+
+/* Dark mode (if needed) */
+@media (prefers-color-scheme: dark) {
+  .security-banner {
+    background: linear-gradient(135deg, #134e4a 0%, #0f766e 100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .security-banner {
+    padding: var(--spacing-md);
+  }
+
+  .security-banner-content {
+    font-size: 0.85rem;
+  }
+
+  .security-icon {
+    font-size: 1.25rem;
+  }
+}
