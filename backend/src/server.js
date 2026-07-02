@@ -27,7 +27,16 @@ if (process.env.DEBUG === 'true') {
 }
 
 // Routes
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Donation API is running',
+    endpoints: ['/health', '/api/donate', '/api/donations']
+  });
+});
+
 app.use('/api', donationRoutes);
+app.use('/', donationRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

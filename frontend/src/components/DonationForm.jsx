@@ -89,10 +89,15 @@ function DonationForm({ onSuccess, isLoading, setIsLoading }) {
         payload.cardDetails = cardDetails;
       }
 
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/donate`,
-        payload
-      );
+      const apiBaseUrl = (process.env.REACT_APP_API_URL || 'https://donation-api-msf.onrender.com/api').replace(/\/+$/, '');
+      const normalizedBase = apiBaseUrl.endsWith('/donate')
+        ? apiBaseUrl.replace(/\/donate$/, '')
+        : apiBaseUrl;
+      const donationEndpoint = normalizedBase.endsWith('/api')
+        ? `${normalizedBase}/donate`
+        : `${normalizedBase}/api/donate`;
+
+      const response = await axios.post(donationEndpoint, payload);
 
       if (response.data.success) {
         onSuccess(response.data.data);
