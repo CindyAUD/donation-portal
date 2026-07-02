@@ -11,7 +11,9 @@ RESTful API for processing charitable donations via M-Pesa or Card payments. All
 | Environment | URL |
 |-------------|-----|
 | Development | `http://localhost:5000/api` |
-| Production | `https://donation-api-xxx.render.com/api` |
+| Production | `https://donation-api-msf.onrender.com/api` |
+
+**Note:** The API accepts routes both with the `/api` prefix and at the root level for flexibility in deployment.
 
 ---
 
@@ -55,6 +57,32 @@ All endpoints return JSON in this format:
 ---
 
 ## Endpoints
+
+### 0. GET / (Root)
+
+**API status and available endpoints**
+
+#### Request
+
+**URL**: `GET /` or `GET /api`
+
+#### Response (200)
+
+```json
+{
+  "success": true,
+  "message": "Donation API is running",
+  "endpoints": ["/health", "/api/donate", "/api/donations"]
+}
+```
+
+#### Example cURL Request
+
+```bash
+curl -X GET http://localhost:5000/
+```
+
+---
 
 ### 1. POST /donate
 
@@ -518,16 +546,4 @@ describe('POST /api/donate', () => {
 });
 ```
 
----
 
-## Support
-
-- **Issue Tracker**: GitHub Issues
-- **Documentation**: See README.md
-- **Code Examples**: See examples above
-- **Environment Setup**: See .env.example files
-
----
-
-**Last Updated**: July 2026
-**Version**: 1.0.0
